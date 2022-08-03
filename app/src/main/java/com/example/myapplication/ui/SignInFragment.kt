@@ -13,11 +13,12 @@ import com.example.dka.databinding.FragmentFilesBinding
 import com.example.dka.databinding.FragmentSignInBinding
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentSignInBinding
+import com.example.myapplication.databinding.SignInFragmentBinding
 import com.example.myapplication.ui.SignInViewModel
 
 class SignInFragment : Fragment() {
 
-    private var _binding: FragmentSignInBinding? = null
+    private var _binding: SignInFragmentBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: SignInViewModel
 
@@ -25,7 +26,7 @@ class SignInFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSignInBinding.inflate(inflater, container, false)
+        _binding = SignInFragmentBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         val view = binding.root
         viewModel = ViewModelProvider(this).get(SignInViewModel::class.java)
@@ -42,7 +43,7 @@ class SignInFragment : Fragment() {
         }
 
         binding.txtVwSignupLink.setOnClickListener {
-            findNavController().navigate(R.id.signUpFragment)
+            findNavController().navigate(R.id.SignUpFragment)
         }
 
         return view

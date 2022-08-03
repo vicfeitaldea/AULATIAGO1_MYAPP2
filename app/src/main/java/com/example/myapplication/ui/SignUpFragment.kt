@@ -6,14 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.myapplication.databinding.FragmentSignUpBinding
-import com.example.myapplication.ui.SignUpViewModel
+import com.example.myapplication.model.Usuario
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class SignUpFragment : Fragment() {
 
-    private var _binding: FragmentSignUpBinding? = null
+    private var _binding: SignUpFragment? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: SignUpViewModel
 
@@ -21,7 +20,7 @@ class SignUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        _binding = SignUpFragment().inflate(inflater, container, false)
         val view = binding.root
         viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
 
