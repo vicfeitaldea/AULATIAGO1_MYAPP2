@@ -9,12 +9,9 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.dka.databinding.FragmentFilesBinding
-import com.example.dka.databinding.FragmentSignInBinding
 import com.example.myapplication.R
-import com.example.myapplication.databinding.FragmentSignInBinding
 import com.example.myapplication.databinding.SignInFragmentBinding
-import com.example.myapplication.ui.SignInViewModel
+
 
 class SignInFragment : Fragment() {
 
@@ -43,7 +40,7 @@ class SignInFragment : Fragment() {
         }
 
         binding.txtVwSignupLink.setOnClickListener {
-            findNavController().navigate(R.id.SignUpFragment)
+            findNavController().navigate(R.id.signUpFragment)
         }
 
         return view

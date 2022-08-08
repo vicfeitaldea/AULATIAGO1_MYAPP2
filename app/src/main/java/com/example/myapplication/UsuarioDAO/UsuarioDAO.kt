@@ -7,24 +7,25 @@ import com.example.myapplication.model.Usuario
 @Dao
 interface UsuarioDAO {
 
-    //listar todos os usuarios
+    // listar todos os usuários
     @Query("SELECT * FROM Usuario")
+     fun listar(): List<Usuario>
 
-    fun listar() : List<Usuario>
-    //inserir dados na porra da ta bela
-    @Insert  //INSERT INTO USUARIO (CONSIDERANDO QUE O USUARIO É UMA ENTIDADE)
-    fun inserir(usuario: Usuario)
-
+    // inserir
+    @Insert // INSERT INTO usuario
+     fun inserir(usuario: Usuario)
 
     // exibir um usuario
-    @Query("SELECT * FROM Usuario WHERE id = :id ") //AND nome = :nome
-    fun exibir(id: Int): Usuario
+    @Query("SELECT * FROM Usuario WHERE id = :id")
+     fun exibir(id: Int) : Usuario
 
-    //atualizar um usuario
+    // atualizar um usuário
     @Update
-    fun atualizar(usuario: Usuario)
+     fun atualizar(usuario: Usuario)
 
-    //excluir um usuario
+    // excluir um usuario
     @Delete
-    fun exclur(usuario: Usuario)
+     fun excluir(usuario: Usuario)
+    //
+
 }
