@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.myapplication.database.AppDataBase
 import com.example.myapplication.databinding.UsuarioListaFragmentBinding
 
@@ -31,6 +32,15 @@ class UsuarioListaFragment : Fragment() {
         usuariosListaViewModelFactory = UsuariosListaViewModelFactory(usuarioDAO)
         viewModel = ViewModelProvider(this, usuariosListaViewModelFactory)
             .get(UsuarioListaViewModel::class.java)
+
+
+        viewModel.usuarios.observe(viewLifecycleOwner) {
+            if (!it.isNullOrEmpty())
+                Toast.makeText(requireContext(),
+                "${it.size}",
+                    Toast.LENGTH_LONG)
+                    .show()
+        }
 
         return view
 
