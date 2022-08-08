@@ -1,8 +1,6 @@
 package com.example.myapplication.UsuarioDAO
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.example.myapplication.model.Usuario
 
 
@@ -18,10 +16,15 @@ interface UsuarioDAO {
     fun inserir(usuario: Usuario)
 
 
-
     // exibir um usuario
+    @Query("SELECT * FROM Usuario WHERE id = :id ") //AND nome = :nome
+    fun exibir(id: Int): Usuario
 
     //atualizar um usuario
+    @Update
+    fun atualizar(usuario: Usuario)
 
     //excluir um usuario
+    @Delete
+    fun exclur(usuario: Usuario)
 }
