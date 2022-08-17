@@ -1,4 +1,4 @@
-package com.example.dka.ui.files
+package com.example.myapplication
 
 import android.content.Context
 import android.os.Bundle
@@ -7,12 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.dka.databinding.FragmentFilesBinding
+import com.example.dka.ui.files.FilesViewModel
+import com.example.myapplication.databinding.FilesFragmentBinding
 import java.io.File
 
 class FilesFragment : Fragment() {
 
-    private var _binding: FragmentFilesBinding? = null
+    private var _binding: FilesFragmentBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var viewModel: FilesViewModel
@@ -21,7 +22,7 @@ class FilesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFilesBinding.inflate(inflater, container, false)
+        _binding = FilesFragmentBinding.inflate(inflater, container, false)
         var view = binding.root
         viewModel = ViewModelProvider(this).get(FilesViewModel::class.java)
 

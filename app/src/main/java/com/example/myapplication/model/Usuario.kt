@@ -9,6 +9,6 @@ class Usuario (
     var nome: String?,
     var email: String?,
     var senha: String?,
-    @PrimaryKey var id: Int? = null
+    @PrimaryKey var id: Long? = null
 
 )

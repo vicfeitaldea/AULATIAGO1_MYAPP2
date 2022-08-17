@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "692183495172",
+    "project_id": "aula1-tiago",
+    "storage_bucket": "aula1-tiago.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692183495172:android:d629c7b3ab4e10ca707b51",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692183495172-8pgfsd2ra23nd9daejcm80qede1235ks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq4Hi3L_c_w_5eT1ZXfQE0HO0ly8Kj8gk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692183495172-8pgfsd2ra23nd9daejcm80qede1235ks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

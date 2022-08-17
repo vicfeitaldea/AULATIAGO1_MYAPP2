@@ -13,7 +13,7 @@ interface UsuarioDAO {
 
     // inserir
     @Insert // INSERT INTO usuario
-     fun inserir(usuario: Usuario)
+     fun inserir(usuario: Usuario): Long
 
     // exibir um usuario
     @Query("SELECT * FROM Usuario WHERE id = :id")
@@ -27,5 +27,9 @@ interface UsuarioDAO {
     @Delete
      fun excluir(usuario: Usuario)
     //
+
+    @Query("SELECT * FROM Usuario WHERE email = :email AND senha = :senha")
+    fun autenticar(email: String, senha: String) : Usuario
+
 
 }
