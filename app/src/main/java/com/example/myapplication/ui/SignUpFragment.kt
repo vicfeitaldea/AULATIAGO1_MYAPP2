@@ -1,4 +1,4 @@
-package com.example.dka.ui.signup
+package com.example.myapplication.ui
 
 import android.content.Intent
 import android.graphics.Bitmap

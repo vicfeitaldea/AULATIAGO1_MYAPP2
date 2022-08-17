@@ -1,4 +1,4 @@
-package com.example.dka.ui.signin
+package com.example.myapplication.ui
 
 import android.content.Context
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.dka.ui.signin.SignInViewModel
 import com.example.myapplication.R
 import com.example.myapplication.databinding.SignInFragmentBinding
 

@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.signup
+package com.example.myapplication.ui
 
 import android.graphics.Bitmap
 import androidx.lifecycle.MutableLiveData
