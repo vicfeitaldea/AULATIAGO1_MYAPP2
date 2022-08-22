@@ -3,23 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/appnav"
-    app:startDestination="@id/signUpFragment">
+    app:startDestination="@id/signInFragment">
 
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.dka.ui.signup.SignUpFragment"
         android:label="SignUpFragment" />
-    <fragment
-        android:id="@+id/signInFragment"
-        android:name="com.example.dka.ui.signin.SignInFragment"
-        android:label="SignInFragment" >
-        <action
-            android:id="@+id/action_signInFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_signInFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
-    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.myapplication.ui.home.HomeFragment"
@@ -48,4 +37,20 @@
         android:name="com.example.myapplication.CarrosFragment"
         android:label="fragment_carros"
         tools:layout="@layout/fragment_carros" />
+    <fragment
+        android:id="@+id/carroFormFragment"
+        android:name="com.example.myapplication.CarroFormFragment"
+        android:label="fragment_carro_form"
+        tools:layout="@layout/fragment_carro_form" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.myapplication.ui.SignInFragment"
+        android:label="SignInFragment" >
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment2"
+            app:destination="@id/signUpFragment" />
+    </fragment>
 </navigation>
