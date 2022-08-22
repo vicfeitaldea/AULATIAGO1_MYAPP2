@@ -6,7 +6,7 @@
     <data>
         <variable
             name="filesViewModel"
-            type="com.example.dka.ui.files.FilesViewModel" />
+            type="com.example.myapplication.ui.FilesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

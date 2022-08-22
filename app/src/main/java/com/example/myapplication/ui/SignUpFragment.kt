@@ -14,7 +14,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.myapplication.database.AppDataBase
 import com.example.myapplication.databinding.SignUpFragmentBinding
 import com.example.myapplication.model.Usuario
-import com.example.myapplication.ui.signup.SignUpViewModel
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.GlobalScope

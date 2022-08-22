@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/appnav"
     app:startDestination="@id/signUpFragment">
 
@@ -11,5 +12,40 @@
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.dka.ui.signin.SignInFragment"
-        android:label="SignInFragment" />
+        android:label="SignInFragment" >
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_usuarioListaFragment"
+            app:destination="@id/usuarioListaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_filesFragment"
+            app:destination="@id/filesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_carrosFragment3"
+            app:destination="@id/carrosFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/usuarioListaFragment"
+        android:name="com.example.myapplication.usuariolista.UsuarioListaFragment"
+        android:label="UsuarioListaFragment" />
+    <fragment
+        android:id="@+id/filesFragment"
+        android:name="com.example.myapplication.ui.FilesFragment"
+        android:label="FilesFragment" />
+    <fragment
+        android:id="@+id/carrosFragment3"
+        android:name="com.example.myapplication.CarrosFragment"
+        android:label="fragment_carros"
+        tools:layout="@layout/fragment_carros" />
 </navigation>
