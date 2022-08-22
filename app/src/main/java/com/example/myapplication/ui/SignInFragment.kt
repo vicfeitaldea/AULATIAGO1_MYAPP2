@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
+import com.example.myapplication.database.AppDataBase
 import com.example.myapplication.databinding.SignInFragmentBinding
 
 
@@ -26,7 +27,19 @@ class SignInFragment : Fragment() {
         _binding = SignInFragmentBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         val view = binding.root
-        viewModel = ViewModelProvider(this).get(SignInViewModel::class.java)
+
+        val appDataBase = AppDataBase.getInstance(requireContext())
+        val usuarioDAO = appDataBase.usuarioDao()
+        val factory = SignInViewModelFactory(usuarioDAO)
+
+
+        viewModel = ViewModelProvider(this, factory).get(SignInViewModel::class.java)
+
+        viewModel.status.observe(viewLifecycleOwner){
+            if(it)
+                findNavController()
+                    .navigate(R.id.homeFragment)
+        }
 
         lerPref(binding.edtTxtSigninEmail)
 
@@ -37,6 +50,9 @@ class SignInFragment : Fragment() {
             if (lembrar){
                 salvarPref(email)
             }
+
+            viewModel.autenticar(email, password)
+
         }
 
         binding.txtVwSignupLink.setOnClickListener {

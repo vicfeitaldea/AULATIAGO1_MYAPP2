@@ -31,7 +31,13 @@ class SignUpFragment : Fragment() {
     ): View? {
         _binding = SignUpFragmentBinding.inflate(inflater, container, false)
         val view = binding.root
-        viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
+
+        val appDataBase = AppDataBase.getInstance(requireContext())
+        val usuarioDAO = appDataBase.usuarioDao()
+        val enderecoDAO = appDataBase.enderecoDao()
+        val factory = SignUpViewModelFactory(usuarioDAO, enderecoDAO)
+
+        viewModel = ViewModelProvider(this, factory).get(SignUpViewModel::class.java)
 
         //FirebaseStorage
         val firebaseStorage = Firebase.storage
