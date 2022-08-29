@@ -68,49 +68,20 @@
             app:layout_constraintTop_toBottomOf="@+id/edtTxtSignupNome" />
 
         <EditText
-            android:id="@+id/edtTxtSignupEndereco"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            android:hint="Logradouro"
-            android:inputType="textEmailAddress"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtTxtSignupEmail" />
-
-        <EditText
-            android:id="@+id/edtTxtSignupNumero"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            android:hint="Número"
-            android:inputType="textEmailAddress"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtTxtSignupEndereco" />
-
-        <EditText
             android:id="@+id/edtTxtSignupSenha"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="13dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Senha"
             android:inputType="textPassword"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtTxtSignupNumero" />
+            app:layout_constraintTop_toBottomOf="@+id/edtTxtSignupEmail" />
 
         <EditText
             android:id="@+id/edtTxtSignupReSenha"

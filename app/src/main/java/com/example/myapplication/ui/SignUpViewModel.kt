@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.myapplication.UsuarioDAO.AuthDAO
 import com.example.myapplication.UsuarioDAO.EnderecoDAO
 import com.example.myapplication.UsuarioDAO.UsuarioDAO
 import com.example.myapplication.model.Endereco
@@ -28,17 +29,24 @@ class SignUpViewModel (val UsuarioDao: UsuarioDAO, val EnderecoDao: EnderecoDAO)
     }
 
     fun salvarUsuario(
-        nome: String, email: String, senha: String,
-        logradouro: String, numero: Int){
-        val usuario = Usuario(nome, email, senha)
-        viewModelScope
-            .launch(Dispatchers.Default) {
-                val usuarioId = UsuarioDao.inserir(usuario)
-                val endereco = Endereco(logradouro, numero, usuarioId)
-                EnderecoDao.inserir(endereco)
-                uploadFoto(usuarioId)
-                status.postValue(true)
-            }
+        nome: String, email: String, senha: String, ){
+
+        val task = AuthDAO.cadastrarUsuario("vicfeital@gmail.com", "123")
+
+        task.addOnSuccessListener {
+
+        }.addOnFailureListener {
+            msg.value = it.message
+        }
+//        val usuario = Usuario(nome, email, senha)
+//        viewModelScope
+//            .launch(Dispatchers.Default) {
+//                val usuarioId = UsuarioDao.inserir(usuario)
+//                val endereco = Endereco(logradouro, numero, usuarioId)
+//                EnderecoDao.inserir(endereco)
+//                uploadFoto(usuarioId)
+//                status.postValue(true)
+        // }
     }
 
 

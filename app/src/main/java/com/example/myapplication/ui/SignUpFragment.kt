@@ -68,12 +68,10 @@ class SignUpFragment : Fragment() {
         binding.btnSignupAcessar.setOnClickListener {
             val nome = binding.edtTxtSignupNome.text.toString()
             val email = binding.edtTxtSignupEmail.text.toString()
-            val logradouro = binding.edtTxtSignupEndereco.text.toString()
-            val numero = binding.edtTxtSignupNumero.text.toString()
             val senha = binding.edtTxtSignupSenha.text.toString()
             val appDatabase = AppDataBase.getInstance(requireContext())
             val usuarioDao = appDatabase.usuarioDao()
-            viewModel.salvarUsuario(nome, email, senha, logradouro, Integer.parseInt(numero))
+            viewModel.salvarUsuario(nome, email, senha)
         }
 
         return view
